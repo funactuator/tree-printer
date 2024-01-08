@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary Tree Visualizer</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>Binary Tree Renderer</header>
+
+    <div id="controls-container">
+      <label>
+        <input type="checkbox" id="colorToggle" onchange="toggleColors()" />
+        Use Random Colors
+      </label>
+
+      <label>
+        Tree Data:
+        <input
+          type="text"
+          id="treeInput"
+          placeholder="Enter tree data string"
+        />
+      </label>
+
+      <button onclick="generateAndDisplayTree()">Render Tree</button>
+      <button onclick="useDefaultTree()">Render Default Tree</button>
+      <button onclick="clearTree()">Clear</button>
+      <script src="./script.js"></script>
+    </div>
+  </body>
+</html>
