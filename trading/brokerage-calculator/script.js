@@ -28,21 +28,38 @@ function calculateBrokerage() {
     const netProfitLoss = sellValue - buyValue - totalCharges;
     const profitLossWithoutCharges = sellValue - buyValue;
 
-    const profitLossLabel = document.getElementById('profitLossLabel');
-    const totalChargesLabel = document.getElementById('totalChargesLabel');
-    const netProfitLossLabel = document.getElementById('netProfitLossLabel');
+    //row 1
+    const isProfitValueElt = document.getElementById('isProfitValue');
+
+    // row 2
+    const profitLossLabelElt = document.getElementById('profitLossLabel');
     const profitLossValueElt = document.getElementById('profitLossValue');
 
-    profitLossLabel.innerText = `${profitLossWithoutCharges >= 0 ? 'Profit Without Charges' : 'Loss Without Charges'}: ${profitLossWithoutCharges.toFixed(2)}`;
-    profitLossLabel.className = profitLossWithoutCharges >= 0 ? 'profit' : 'loss';
+    // row 3
+    const totalChargesValueElt = document.getElementById('totalChargesValue');
 
-    profitLossValueElt.innerText = `Profit or Loss: ${netProfitLoss >= 0 ? 'Profit' : 'Loss'}`;
-    profitLossLabel.className = netProfitLoss >= 0 ? 'profit' : 'loss';
+    // row 4
+    const netProfitLossLabelElt = document.getElementById('netProfitLossLabel');
+    const netProfitLossvalueElt = document.getElementById('netProfitLossValue');
 
-    totalChargesLabel.innerText = `Total Charges: ${totalCharges.toFixed(2)}`;
+    // row 1 (To show is it profit or loss)
+    isProfitValueElt.innerText = netProfitLoss >= 0 ? 'Profit' : 'Loss';
+    isProfitValueElt.className = netProfitLoss >= 0 ? 'profit' : 'loss';
 
-    netProfitLossLabel.innerText = `Net Profit or Loss: ${netProfitLoss.toFixed(2)}`;
-    netProfitLossLabel.className = netProfitLoss >= 0 ? 'profit' : 'loss';
+
+    // row 2 (to show Profit or Loss Row Without charges)
+    profitLossLabelElt.innerText = profitLossWithoutCharges >= 0 ? 'Profit Without Charges' : 'Loss Without Charges';
+    profitLossValueElt.innerText = profitLossWithoutCharges.toFixed(2);
+    profitLossValueElt.className = profitLossWithoutCharges >= 0 ? 'profit' : 'loss';
+
+    // row 3 (Total Charges)
+    totalChargesValueElt.innerText = totalCharges.toFixed(2);
+
+    //row 4
+    netProfitLossLabelElt.innerText = netProfitLoss ? 'Net Profit' : "Net Loss";
+    netProfitLossvalueElt.innerText = netProfitLoss.toFixed(2);
+    netProfitLossvalueElt.className = netProfitLoss >= 0 ? 'profit' : 'loss';
 
     document.getElementById('right-section').style.display = 'block';
+
 }
