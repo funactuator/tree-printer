@@ -23,10 +23,10 @@
         <input type="number" id="totalLots" placeholder="Enter total lots">
 
         <label for="lotSize">Lot Size:</label>
-        <input type="number" id="lotSize" placeholder="Enter lot size">
+        <input type="number" id="lotSize" value = 15 placeholder="Enter lot size">
 
         <label for="platformChargePerLot">Platform Charge per lot:</label>
-        <input type="number" id="platformChargePerLot" placeholder="Enter platform charge per lot">
+        <input type="number"  value = 40 id="platformChargePerLot" placeholder="Enter platform charge per lot">
 
         <button onclick="calculateBrokerage()">Calculate</button>
     </div>
@@ -34,13 +34,30 @@
     <div id="right-section">
       <h3>Result:</h3>
       <div id="result">
-          <p id="profitLossLabel" class="black"></p>
-          <p id="profitLossValue" class="black"></p>
-
-          <p id="totalChargesLabel" class="loss">Total Charges:</p>
-          <p id="netProfitLossLabel" class="black">Net Profit or Loss:</p>
+          <table>
+              <tr>
+                  <th>Label</th>
+                  <th>Value</th>
+              </tr>
+              <tr>
+                  <td class="label" id ="isProfitLabel">Profit or Loss</td>
+                  <td class="profit" id="isProfitValue"></td>
+              </tr>
+              <tr>
+                  <td class="label" id ="profitLossLabel"></td>
+                  <td class="black" id="profitLossValue"></td>
+              </tr>
+              <tr>
+                  <td class="label" id ="totalChargesLabel">Total Charges</td>
+                  <td class="loss" id="totalChargesValue"></td>
+              </tr>
+              <tr>
+                  <td class="label" id ="netProfitLossLabel"></td>
+                  <td id="netProfitLossValue"></td>
+              </tr>
+          </table>
       </div>
-  </div>
+  </div>  
 </div>
 
   <script src="./script.js"></script>
