@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brokerage Calculator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h2>Brokerage Calculator</h2>
 
-    <label for="buyPrice">Buy Price per unit:</label>
-    <input type="number" id="buyPrice" placeholder="Enter buy price" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brokerage Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <label for="sellPrice">Sell Price per unit:</label>
-    <input type="number" id="sellPrice" placeholder="Enter sell price" />
+<body>
+  <div id="calculator-container">
+    <div id="left-section">
+        <h2>Brokerage Calculator</h2>
+        
+        <label for="buyPrice">Buy Price per unit:</label>
+        <input type="number" id="buyPrice" placeholder="Enter buy price">
 
-    <label for="totalLots">Total Lots:</label>
-    <input type="number" id="totalLots" placeholder="Enter total lots" />
+        <label for="sellPrice">Sell Price per unit:</label>
+        <input type="number" id="sellPrice" placeholder="Enter sell price">
 
-    <label for="lotSize">Lot Size:</label>
-    <input type="number" id="lotSize" placeholder="Enter lot size" />
+        <label for="totalLots">Total Lots:</label>
+        <input type="number" id="totalLots" placeholder="Enter total lots">
 
-    <button onclick="calculateBrokerage()">Calculate</button>
+        <label for="lotSize">Lot Size:</label>
+        <input type="number" id="lotSize" placeholder="Enter lot size">
 
-    <h3>Result:</h3>
-    <p id="result"></p>
-    <script src="./script.js"></script>
-  </body>
+        <label for="platformChargePerLot">Platform Charge per lot:</label>
+        <input type="number" id="platformChargePerLot" placeholder="Enter platform charge per lot">
+
+        <button onclick="calculateBrokerage()">Calculate</button>
+    </div>
+
+    <div id="right-section">
+      <h3>Result:</h3>
+      <div id="result">
+          <p id="profitLossLabel" class="black"></p>
+          <p id="profitLossValue" class="black"></p>
+
+          <p id="totalChargesLabel" class="loss">Total Charges:</p>
+          <p id="netProfitLossLabel" class="black">Net Profit or Loss:</p>
+      </div>
+  </div>
+</div>
+
+  <script src="./script.js"></script>
+</body>
+
 </html>
